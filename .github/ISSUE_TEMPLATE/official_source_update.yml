@@ -1,0 +1,39 @@
+name: Official-source update
+description: Propose a change based on a current patent-office or WIPO primary source.
+title: "[Source]: "
+labels: ["official-source"]
+body:
+  - type: input
+    id: jurisdiction
+    attributes:
+      label: Jurisdiction or institution
+      placeholder: CNIPA, USPTO, EPO, WIPO
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+    validations:
+      required: true
+  - type: input
+    id: retrieved
+    attributes:
+      label: Retrieval date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Required workflow change
+      description: Identify the affected skill step or reference and explain the behavioral impact.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: The linked source is public and official, and this issue contains no case-specific confidential data.
+          required: true

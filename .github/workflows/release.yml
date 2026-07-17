@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate repository
+        run: |
+          bash scripts/test.sh
+          output="$(npx -y skills@1.5.9 add . --list)"
+          grep -q 'patent-bilingual-qa' <<<"$output"
+          grep -q 'patent-office-action-response' <<<"$output"
+      - name: Build release archives
+        run: python3 scripts/package_release.py --version "$GITHUB_REF_NAME" --output-dir dist
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          assets=(dist/*.zip dist/SHA256SUMS.txt)
+          args=("$GITHUB_REF_NAME" "${assets[@]}" --title "$GITHUB_REF_NAME" --notes-file .github/release-notes.md)
+          if [[ "$GITHUB_REF_NAME" == v0.* || "$GITHUB_REF_NAME" == *-* ]]; then
+            args+=(--prerelease)
+          else
+            args+=(--latest)
+          fi
+          gh release create "${args[@]}"

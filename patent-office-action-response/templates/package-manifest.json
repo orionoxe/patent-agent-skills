@@ -1,0 +1,30 @@
+{
+  "jurisdiction": "CN",
+  "communication_date": "[VERIFY]",
+  "deadline_as_stated": "[VERIFY]",
+  "deadline_source": "[VERIFY]",
+  "reviewer": "",
+  "official_sources_retrieved": "[VERIFY]",
+  "inventory_rows": [
+    {
+      "id": "R1",
+      "category": "rejection",
+      "scope": "claims",
+      "claims": ["1"],
+      "ground": "",
+      "examiner_position": "",
+      "evidence": [
+        {
+          "source": "D1",
+          "pinpoint": ""
+        }
+      ],
+      "strategy": "traverse",
+      "response_section": "05-response-draft.md#response-to-r1",
+      "amendment_ids": [],
+      "status": "open"
+    }
+  ],
+  "amendments": [],
+  "critical_flags": ["Reviewer not assigned"]
+}

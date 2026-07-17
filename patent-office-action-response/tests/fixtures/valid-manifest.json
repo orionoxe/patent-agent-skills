@@ -1,0 +1,45 @@
+{
+  "jurisdiction": "US",
+  "communication_date": "2026-06-01",
+  "deadline_as_stated": "Three months from mailing date",
+  "deadline_source": "Office Action p. 1",
+  "reviewer": "Registered patent practitioner",
+  "official_sources_retrieved": "2026-07-16",
+  "inventory_rows": [
+    {
+      "id": "R1",
+      "category": "rejection",
+      "scope": "claims",
+      "claims": ["1", "2"],
+      "ground": "35 U.S.C. 103",
+      "examiner_position": "D1 in view of D2 allegedly teaches all limitations.",
+      "evidence": [
+        {
+          "source": "D1",
+          "pinpoint": "paragraph 32"
+        }
+      ],
+      "strategy": "mixed",
+      "response_section": "05-response-draft.md#response-to-r1",
+      "amendment_ids": ["A1"],
+      "status": "addressed"
+    }
+  ],
+  "amendments": [
+    {
+      "id": "A1",
+      "claim": "1",
+      "exact_change": "Add the supported real-time context limitation.",
+      "basis": [
+        {
+          "document": "Specification as filed",
+          "pinpoint": "paragraph 45",
+          "rationale": "Paragraph 45 expressly describes the limitation in the claimed combination."
+        }
+      ],
+      "scope_effect": "Narrows claim 1 to real-time context updates.",
+      "reason": "Creates an explicit distinction from the examiner's mapping."
+    }
+  ],
+  "critical_flags": []
+}

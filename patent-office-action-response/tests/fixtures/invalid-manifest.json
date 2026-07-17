@@ -1,0 +1,25 @@
+{
+  "jurisdiction": "US",
+  "communication_date": "2026-06-01",
+  "deadline_as_stated": "",
+  "deadline_source": "",
+  "reviewer": "",
+  "official_sources_retrieved": "2026-07-16",
+  "inventory_rows": [
+    {
+      "id": "R1",
+      "category": "rejection",
+      "scope": "claims",
+      "claims": ["1"],
+      "ground": "35 U.S.C. 103",
+      "examiner_position": "",
+      "evidence": [],
+      "strategy": "amend",
+      "response_section": "",
+      "amendment_ids": [],
+      "status": "open"
+    }
+  ],
+  "amendments": [],
+  "critical_flags": ["Missing amendment basis"]
+}

@@ -1,0 +1,2 @@
+Claim 1. A system comprising a processor (101) configured to operate at 20 ms.
+Claim 2. The system of claim 1, wherein the processor (101) uses 50%.

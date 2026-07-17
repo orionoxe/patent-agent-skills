@@ -1,0 +1,2 @@
+issue_id,severity,segment_id,category,source_text,target_text,proposed_target,rationale,authority_or_termbase_id,confidence,owner,decision,status
+I-001,P1,CLM-001-L01,terminology,,,,,,medium,,,open
