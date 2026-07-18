@@ -81,11 +81,9 @@ def build_release(version: str, output_dir: pathlib.Path) -> list[pathlib.Path]:
     archives.append(bundle)
 
     checksum_lines = [f"{sha256(path)}  {path.name}" for path in archives]
-    (output_dir / "SHA256SUMS.txt").write_text(
-        "\n".join(checksum_lines) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
+    # write_text(newline=...) is unavailable on the supported Python 3.9 runtime.
+    checksum_data = ("\n".join(checksum_lines) + "\n").encode("utf-8")
+    (output_dir / "SHA256SUMS.txt").write_bytes(checksum_data)
     return archives
 
 
